@@ -790,7 +790,7 @@ async function joinChat() {
   const url  = document.getElementById('fb-url').value.trim().replace(/\/$/,'');
 
   if (!nick || nick.length < 2) return setErr('никнейм минимум 2 символа');
-  if (!DEMO && (!url || !url.includes('firebaseio.com'))) return setErr('введи url firebase или нажми demo');
+  if (!url || (!url.includes('firebaseio.com') && !url.includes('firebasedatabase.app'))) return setErr('введи url firebase или нажми demo');
 
   if (!DEMO) DB_URL = url;
 
